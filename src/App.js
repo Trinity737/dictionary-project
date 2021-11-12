@@ -15,7 +15,7 @@ export default function App() {
           />
         </header>
         <main>
-          <Dictionary />
+          <Dictionary defaultKeyword="Dictionary" />
         </main>
         <footer className="App-footer">
           <small>Coded by SheCodes</small>

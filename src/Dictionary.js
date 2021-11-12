@@ -23,16 +23,13 @@ export default function Dictionary(props) {
     search();
   }
 
-  function search(event) {
-    event.preventDefault();
-  }
-
   function handleKeywordChange(event) {
     setKeyword(event.target.value);
   }
 
   function load() {
     setLoaded(true);
+    search();
   }
   if (loaded) {
     return (
@@ -54,7 +51,7 @@ export default function Dictionary(props) {
       </div>
     );
   } else {
-    loaded();
+    load();
     return "Loading...";
   }
 }

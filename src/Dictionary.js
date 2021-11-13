@@ -10,11 +10,12 @@ export default function Dictionary(props) {
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
 
-  function handlePexelsResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response.data[0]);
   }
-  function handleDictionaryResponse(response) {
-    setPhotos(response.data.photos);
+
+  function handlePexelsResponse(response) {
+    setPhotos(response.data);
   }
 
   function search() {
@@ -24,6 +25,7 @@ export default function Dictionary(props) {
 
     let pexelsApiKey =
       "563492ad6f917000010000014cfab97ce9f64bb0ba4cf5cb63d9acd8";
+
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
 
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
